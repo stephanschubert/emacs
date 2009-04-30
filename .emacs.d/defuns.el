@@ -1,3 +1,14 @@
+; For loading libraries from the vendor directory
+(defun vendor (library)
+	(let* ((file (symbol-name library))
+				 (normal (concat "~/.emacs.d/vendor/" file))
+				 (suffix (concat normal ".el")))
+		(cond
+		 ((file-directory-p normal) (add-to-list 'load-path normal) (require library))
+		 ((file-directory-p suffix) (add-to-list 'load-path suffix) (require library))
+		 ((file-exists-p suffix) (require library)))))
+
+;
 (defun rename-file-and-buffer (new-name)
  "Renames both current buffer and file it's visiting to NEW-NAME." (interactive "sNew name: ")
  (let ((name (buffer-name))
@@ -11,6 +22,7 @@
 		 (set-visited-file-name new-name) 	 
 		 (set-buffer-modified-p nil))))))
 
+;
 (defun move-buffer-file (dir)
  "Moves both current buffer and file it's visiting to DIR." (interactive "DNew directory: ")
  (let* ((name (buffer-name))

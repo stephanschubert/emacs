@@ -1,1 +1,15 @@
 My emacs configuration.
+
+== 1. (Un-)Installation ==
+
+ruby install.rb
+
+or
+
+ruby uninstall.rb
+
+Essentially creates/removes two symlinks from the 
+git repository to ~/.emacs and ~/.emacs.d
+
+
+More to come.

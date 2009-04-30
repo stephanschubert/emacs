@@ -4,3 +4,7 @@
 (load "custom")
 (load "global")
 (load "defuns")
+
+(vendor 'color-theme)
+(load "theme")
+
