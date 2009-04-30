@@ -1,1 +1,0 @@
-/home/jazen/emacs/.emacs.d
