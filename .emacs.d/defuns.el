@@ -1,3 +1,11 @@
+; Reload ~/.emacs on the fly
+(defun reload-dot-emacs ()
+	(interactive)
+	(if (bufferp (get-file-buffer ".emacs"))
+			(save-buffer (get-buffer ".emacs")))
+	(load-file "~/.emacs")
+	(message ".emacs reloaded successfully"))
+
 ; For loading libraries from the vendor directory
 (defun vendor (library)
 	(let* ((file (symbol-name library))
