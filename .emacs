@@ -8,6 +8,10 @@
 (load "jazen/global")
 (load "jazen/defuns")
 (load "jazen/shell")
+(load "jazen/ruby")
+
+(vendor 'idle-highlight)
+(idle-highlight)
 
 (vendor 'color-theme)
 (load "jazen/theme")
