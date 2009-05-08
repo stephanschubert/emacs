@@ -2,11 +2,13 @@
 	'(progn
 		 (add-hook 'ruby-mode-hook 
 							 '(lambda ()
-									(require 'ruby-electric) ; Smart editing
+									(require 'ruby-electric)
 									(ruby-electric-mode t)
 
-									(require 'ruby-compilation)
+									(require 'ri)
+									(local-set-key [f1] 'ri)
 
+									(require 'ruby-compilation)
 									(require 'inf-ruby)
 									(inf-ruby-keys)))
 
