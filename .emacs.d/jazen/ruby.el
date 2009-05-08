@@ -13,6 +13,17 @@
 		 (define-key ruby-mode-map (kbd "RET") 'ruby-reindent-then-newline-and-indent)
 ))
 
+;; FIXME!
+;; Clear the compilation buffer between test runs.
+;; (eval-after-load 'ruby-compilation
+;;   '(progn
+;;      (defadvice ruby-do-run-w/compilation (before kill-buffer (name cmdlist))
+;;        (let ((comp-buffer-name (format "*%s*" name)))
+;;          (when (get-buffer comp-buffer-name)
+;;            (with-current-buffer comp-buffer-name
+;;              (delete-region (point-min) (point-max))))))
+;;      (ad-activate 'ruby-do-run-w/compilation)))
+
 ; There are all ruby files
 (add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.sake$" . ruby-mode))
