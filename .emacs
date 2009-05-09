@@ -9,6 +9,7 @@
 (load "jazen/defuns")
 (load "jazen/shell")
 (load "jazen/ruby")
+(load "jazen/rails")
 
 (vendor 'idle-highlight)
 (idle-highlight)
@@ -18,4 +19,3 @@
 
 (vendor 'icicles)
 (icy-mode)
-

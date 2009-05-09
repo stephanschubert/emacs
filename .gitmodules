@@ -1,0 +1,3 @@
+[submodule ".emacs.d/vendor/rails"]
+	path = .emacs.d/vendor/rails
+	url = git://github.com/remvee/emacs-rails.git

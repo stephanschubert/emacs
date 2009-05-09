@@ -39,6 +39,12 @@
 									 next-shell-buffer)))
 		(shell buffer)))
 
+(defun jzn/close-other-window ()
+	(interactive)
+	(other-window 1)
+	(delete-window))
+(global-set-key (kbd "C-c k") 'jzn/close-other-window)
+
 
 ; ------------------------------------------------------------------------------
 
