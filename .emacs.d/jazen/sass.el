@@ -1,0 +1,1 @@
+(vendor 'sass-mode)

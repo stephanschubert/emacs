@@ -13,14 +13,18 @@
 (load "jazen/ruby")
 (load "jazen/rails")
 (load "jazen/yaml")
-
-(vendor 'idle-highlight)
-(idle-highlight)
-
-(vendor 'color-theme)
+(load "jazen/haml")
+(load "jazen/sass")
 (load "jazen/theme")
-
-(vendor 'icicles)
-(icy-mode)
+(load "jazen/icicles")
 
 (vendor 'egg)
+
+
+
+
+
+
+
+
+
