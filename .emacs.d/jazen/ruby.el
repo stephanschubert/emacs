@@ -1,7 +1,11 @@
+(vendor 'ruby-hacks)
+
 (eval-after-load 'ruby-mode
 	'(progn
 		 (add-hook 'ruby-mode-hook 
 							 '(lambda ()
+                  (define-key ruby-mode-map (kbd "<return>") 'ruby-reindent-then-newline-and-indent)
+
 									(require 'ruby-electric)
 									(ruby-electric-mode t)
 
@@ -11,8 +15,6 @@
 									(require 'ruby-compilation)
 									(require 'inf-ruby)
 									(inf-ruby-keys)))
-
-		 (define-key ruby-mode-map (kbd "RET") 'ruby-reindent-then-newline-and-indent)
 ))
 
 ;; FIXME!
