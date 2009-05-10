@@ -10,6 +10,7 @@
 (load "jazen/shell")
 (load "jazen/ruby")
 (load "jazen/rails")
+(load "jazen/yaml")
 
 (vendor 'idle-highlight)
 (idle-highlight)

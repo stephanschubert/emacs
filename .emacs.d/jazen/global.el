@@ -28,7 +28,7 @@
 ; 1 tab == 2 spaces; EOD
 (setq-default c-basic-offset 2)
 (setq-default tab-width 2)
-(setq-default indent-tab-mode nil)
+(setq-default indent-tabs-mode nil)
 
 ; Ensure scrolling is enabled
 (mouse-wheel-mode t)
