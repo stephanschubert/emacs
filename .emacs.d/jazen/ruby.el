@@ -1,10 +1,12 @@
 (vendor 'ruby-hacks)
+(vendor 'rdebug)
 
 (eval-after-load 'ruby-mode
 	'(progn
 		 (add-hook 'ruby-mode-hook 
 							 '(lambda ()
                   (define-key ruby-mode-map (kbd "<return>") 'ruby-reindent-then-newline-and-indent)
+                  (define-key ruby-mode-map "\C-c\C-d" 'rdebug)
 
 									(require 'ruby-electric)
 									(ruby-electric-mode t)
