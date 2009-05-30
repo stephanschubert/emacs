@@ -18,14 +18,6 @@
 (load "jazen/theme")
 (load "jazen/icicles")
 (load "jazen/textile")
+(load "jazen/jabber")
 
 (vendor 'egg)
-
-
-
-
-
-
-
-
-

@@ -55,3 +55,8 @@
 
 ; Use firefox
 (setq browse-url-browser-function 'browse-url-firefox)
+
+; Setup browse-kill-ring
+(vendor 'browse-kill-ring)
+(browse-kill-ring-default-keybindings)
+(setq browse-kill-ring-display-duplicates nil)

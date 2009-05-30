@@ -1,0 +1,1 @@
+(add-to-list 'jabber-account-list '("s.schubert@uniplex"))
