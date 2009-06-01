@@ -20,5 +20,6 @@
 (load "jazen/textile")
 (load "jazen/jabber")
 (load "jazen/yasnippet")
+(load "jazen/cucumber")
 
 (vendor 'egg)

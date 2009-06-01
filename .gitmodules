@@ -4,3 +4,6 @@
 [submodule ".emacs.d/vendor/egg"]
 	path = .emacs.d/vendor/egg
 	url = git://github.com/bogolisk/egg.git
+[submodule ".emacs.d/vendor/cucumber-mode"]
+	path = .emacs.d/vendor/cucumber-mode
+	url = git://github.com/michaelklishin/cucumber.el.git
