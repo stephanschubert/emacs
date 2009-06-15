@@ -5,10 +5,10 @@
 ; Explicit loading without load-path adjustment because
 ; some names could clash with other libraries.
 
+(load "jazen/defuns")
 (load "jazen/bindings")
 (load "jazen/custom")
 (load "jazen/global")
-(load "jazen/defuns")
 (load "jazen/shell")
 (load "jazen/ruby")
 (load "jazen/rails")
