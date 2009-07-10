@@ -7,3 +7,6 @@
 [submodule ".emacs.d/vendor/cucumber-mode"]
 	path = .emacs.d/vendor/cucumber-mode
 	url = git://github.com/michaelklishin/cucumber.el.git
+[submodule ".emacs.d/vendor/html5-el"]
+	path = .emacs.d/vendor/html5-el
+	url = git://github.com/hober/html5-el.git
