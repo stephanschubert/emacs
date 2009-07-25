@@ -22,5 +22,6 @@
 (load "jazen/yasnippet")
 (load "jazen/cucumber")
 (load "jazen/nxml")
+(load "jazen/javascript")
 
 (vendor 'egg)
