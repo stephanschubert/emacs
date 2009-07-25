@@ -1,4 +1,4 @@
-; Reload ~/.emacs on the fly --------------------------------------------------
+; Reload ~/.emacs on the fly ---------------------------------------------------
 
 (defun reload-dot-emacs ()
 	(interactive)
@@ -6,7 +6,6 @@
 			(save-buffer (get-buffer ".emacs")))
 	(load-file "~/.emacs")
 	(message ".emacs reloaded successfully"))
-
 
 ; For loading libraries from the vendor directory ------------------------------
 
@@ -18,7 +17,6 @@
 		 ((file-directory-p normal) (add-to-list 'load-path normal) (require library))
 		 ((file-directory-p suffix) (add-to-list 'load-path suffix) (require library))
 		 ((file-exists-p suffix) (require library)))))
-
 
 ; Alternate shell command ------------------------------------------------------
 
@@ -39,12 +37,13 @@
 									 next-shell-buffer)))
 		(shell buffer)))
 
+; ------------------------------------------------------------------------------
+
 (defun jzn/close-other-window ()
 	(interactive)
 	(other-window 1)
 	(delete-window))
 (global-set-key (kbd "C-c k") 'jzn/close-other-window)
-
 
 ; ------------------------------------------------------------------------------
 
@@ -61,7 +60,6 @@
 							 (rename-buffer new-name) 	 
 							 (set-visited-file-name new-name) 	 
 							 (set-buffer-modified-p nil))))))
-
 
 ; ------------------------------------------------------------------------------
 
@@ -81,3 +79,28 @@
 							(set-visited-file-name newname) 	
 							(set-buffer-modified-p nil) 	
 							t)))) 
+
+; ------------------------------------------------------------------------------
+
+;; I-search with initial contents
+(defvar isearch-initial-string nil)
+
+(defun isearch-set-initial-string ()
+  (remove-hook 'isearch-mode-hook 'isearch-set-initial-string)
+  (setq isearch-string isearch-initial-string)
+  (isearch-search-and-update))
+
+(defun isearch-forward-at-point (&optional regexp-p no-recursive-edit)
+  "Interactive search forward for the symbol at point."
+  (interactive "P\np")
+  (if regexp-p (isearch-forward regexp-p no-recursive-edit)
+    (let* ((end (progn (skip-syntax-forward "w_") (point)))
+           (begin (progn (skip-syntax-backward "w_") (point))))
+      (if (eq begin end)
+          (isearch-forward regexp-p no-recursive-edit)
+        (setq isearch-initial-string (buffer-substring begin end))
+        (add-hook 'isearch-mode-hook 'isearch-set-initial-string)
+        (isearch-forward regexp-p no-recursive-edit)))))
+
+(global-set-key (kbd "C-s") 'isearch-forward-at-point)
+(global-set-key (kbd "M-s") 'isearch-forward)

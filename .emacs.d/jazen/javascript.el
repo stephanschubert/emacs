@@ -30,8 +30,8 @@
 
 (add-hook 'js2-mode-hook 
           '(lambda ()
-             (define-key js2-mode-map (kbd "A-r") 'js2-execute-buffer)
-             (define-key js2-mode-map (kbd "A-R") 'js2-execute-line)
+             (define-key js2-mode-map (kbd "C-c b") 'js2-execute-buffer)
+             (define-key js2-mode-map (kbd "C-c l") 'js2-execute-line)
              (define-key js2-mode-map "\C-L" 'js2-insert-console)
              (defun js-continued-var-decl-list-p ()
                "Return non-nil if point is inside a continued variable declaration
