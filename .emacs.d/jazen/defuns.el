@@ -102,5 +102,4 @@
         (add-hook 'isearch-mode-hook 'isearch-set-initial-string)
         (isearch-forward regexp-p no-recursive-edit)))))
 
-(global-set-key (kbd "C-s") 'isearch-forward-at-point)
-(global-set-key (kbd "M-s") 'isearch-forward)
+(global-set-key (kbd "M-s") 'isearch-forward-at-point)
