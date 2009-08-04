@@ -4,8 +4,8 @@
 [submodule ".emacs.d/vendor/egg"]
 	path = .emacs.d/vendor/egg
 	url = git://github.com/bogolisk/egg.git
-[submodule ".emacs.d/vendor/cucumber-mode"]
-	path = .emacs.d/vendor/cucumber-mode
+[submodule ".emacs.d/vendor/feature-mode"]
+	path = .emacs.d/vendor/feature-mode
 	url = git://github.com/michaelklishin/cucumber.el.git
 [submodule ".emacs.d/vendor/html5-el"]
 	path = .emacs.d/vendor/html5-el
