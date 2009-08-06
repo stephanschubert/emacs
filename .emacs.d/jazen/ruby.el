@@ -1,3 +1,6 @@
+(add-to-list 'load-path "~/.emacs.d/vendor/ruby-mode")
+
+(vendor 'ruby-mode)
 (vendor 'ruby-hacks)
 (vendor 'rdebug)
 
