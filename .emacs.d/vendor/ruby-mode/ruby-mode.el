@@ -1179,6 +1179,31 @@ balanced expression is found."
   :type 'face
   :group 'ruby)
 
+(defcustom ruby-method-call-dot-face 'ruby-method-call-dot-face
+  "Face used to highlight a method call's dot in ruby-mode"
+  :type 'face
+  :group 'ruby)
+
+(defcustom ruby-method-call-name-face 'ruby-method-call-name-face
+  "Face used to highlight a method call in ruby-mode"
+  :type 'face
+  :group 'ruby)
+
+(defcustom ruby-regexp-begin-face 'ruby-regexp-begin-face
+  "Face used to highlight the beginning of a regular expression in ruby-mode"
+  :type 'face
+  :group 'ruby)
+
+(defcustom ruby-regexp-end-face 'ruby-regexp-end-face
+  "Face used to highlight the end of a regular expression in ruby-mode"
+  :type 'face
+  :group 'ruby)
+
+(defcustom ruby-regexp-face 'ruby-regexp-face
+  "Face used to highlight a regular expression in ruby-mode"
+  :type 'face
+  :group 'ruby)
+
 ;; -----------------------------------------------------------------------------
 
 (cond
@@ -1416,12 +1441,25 @@ buffer position `limit' or the end of the buffer."
      '("#\\({[^}\n\\\\]*\\(\\\\.[^}\n\\\\]*\\)*}\\|\\(\\$\\|@\\|@@\\)\\(\\w\\|_\\)+\\)"
        0 font-lock-variable-name-face t)
 
+     ;; Regular expression
+
+     '("\\(/\\)\\([^/]*\\)\\(/\\)"
+       (1 ruby-regexp-begin-face t)
+       (2 ruby-regexp-face t)
+       (3 ruby-regexp-end-face t))
+
      ;; String interpolation
 
      '("\\(#{\\)\\([a-zA-Z0-9_]+\\)\\(}\\)" 
        (1 ruby-string-interpolation-begin-face t)
        (2 ruby-string-interpolation-expression-face t)
        (3 ruby-string-interpolation-end-face t))
+
+     ;; Method call
+
+     '("\\(\\.\\)\\([a-zA-Z0-9_\\?!]+\\)"
+       (1 ruby-method-call-dot-face t)
+       (2 ruby-method-call-name-face t))
 
 
      ;; warn lower camel case
