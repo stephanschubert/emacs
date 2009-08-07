@@ -1443,7 +1443,7 @@ buffer position `limit' or the end of the buffer."
 
      ;; Regular expression
 
-     '("\\(/\\)\\([^/]*\\)\\(/\\)"
+     '("[^#]*\\(/\\)\\([^/]*\\)\\(/\\)"
        (1 ruby-regexp-begin-face t)
        (2 ruby-regexp-face t)
        (3 ruby-regexp-end-face t))
