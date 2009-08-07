@@ -1428,6 +1428,7 @@ buffer position `limit' or the end of the buffer."
        0 font-lock-comment-face t)
      '(ruby-font-lock-maybe-docs
        0 font-lock-comment-face t)
+
      ;; general delimited string
      '("\\(^\\|[[ \t\n<+(,=]\\)\\(%[xrqQwW]?\\([^<[{(a-zA-Z0-9 \n]\\)[^\n\\\\]*\\(\\\\.[^\n\\\\]*\\)*\\(\\3\\)\\)"
        (2 font-lock-string-face))
@@ -1440,6 +1441,12 @@ buffer position `limit' or the end of the buffer."
      ;; expression expansion
      '("#\\({[^}\n\\\\]*\\(\\\\.[^}\n\\\\]*\\)*}\\|\\(\\$\\|@\\|@@\\)\\(\\w\\|_\\)+\\)"
        0 font-lock-variable-name-face t)
+
+     ;; Method call
+
+     '("^[^#][^\"']*\\([\"'][^\"']*[\"']\\)*\\(\\.\\)\\([a-zA-Z0-9_\\?!]+\\)"
+       (2 ruby-method-call-dot-face t)
+       (3 ruby-method-call-name-face t))
 
      ;; Regular expression
 
@@ -1454,13 +1461,6 @@ buffer position `limit' or the end of the buffer."
        (1 ruby-string-interpolation-begin-face t)
        (2 ruby-string-interpolation-expression-face t)
        (3 ruby-string-interpolation-end-face t))
-
-     ;; Method call
-
-     '("\\(\\.\\)\\([a-zA-Z0-9_\\?!]+\\)"
-       (1 ruby-method-call-dot-face t)
-       (2 ruby-method-call-name-face t))
-
 
      ;; warn lower camel case
      ;'("\\<[a-z]+[a-z0-9]*[A-Z][A-Za-z0-9]*\\([!?]?\\|\\>\\)"
