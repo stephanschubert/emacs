@@ -124,3 +124,12 @@
    (if mark-active (list (region-beginning) (region-end))
      (list (line-beginning-position)
            (line-beginning-position 2)))))
+
+;; -----------------------------------------------------------------------------
+
+(defun delete-this-file ()
+  (interactive)
+  (or (buffer-file-name) (error "No file is currently being edited."))
+  (when (yes-or-no-p "Really delete this file?")
+    (delete-file (buffer-file-name))
+    (kill-this-buffer)))
