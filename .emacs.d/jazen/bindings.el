@@ -16,3 +16,9 @@
 ; Prefer backward-kill-word over Backspace
 (global-set-key "\C-w" 'backward-kill-word) ; was kill-region
 (global-set-key "\C-x\C-k" 'kill-region)    
+
+; Duplicate line at point
+(global-set-key (kbd "C-x y") 'jzn/duplicate-line)
+
+; Duplicate line at point and comment original.
+(global-set-key (kbd "C-x c") (lambda()(interactive)(jzn/duplicate-line t)))

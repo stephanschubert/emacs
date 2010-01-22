@@ -133,3 +133,18 @@
   (when (yes-or-no-p "Really delete this file?")
     (delete-file (buffer-file-name))
     (kill-this-buffer)))
+
+(defun jzn/duplicate-line (&optional commentfirst)
+  "Duplicates the line at point; if COMMENTFIRST is non-nil, comment the original."
+  (interactive)
+  (beginning-of-line)
+  (let ((beg (point)))
+    (end-of-line)
+    (let ((str (buffer-substring beg (point))))
+      (when commentfirst
+        (comment-region beg (point)))
+      (insert-string
+       (concat (if (= 0 (forward-line 1)) "" "\n") str "\n"))
+      (forward-line -1))))
+
+
