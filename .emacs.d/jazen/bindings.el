@@ -22,3 +22,6 @@
 
 ; Duplicate line at point and comment original.
 (global-set-key (kbd "C-x c") (lambda()(interactive)(jzn/duplicate-line t)))
+
+; M-x query-replace
+(global-set-key (kbd "<f6>") 'query-replace)
