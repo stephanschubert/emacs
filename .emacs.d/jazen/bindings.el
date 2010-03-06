@@ -25,3 +25,6 @@
 
 ; M-x query-replace
 (global-set-key (kbd "<f6>") 'query-replace)
+
+; M-g g (goto line)
+(global-set-key (kbd "<f5>") 'goto-line)
