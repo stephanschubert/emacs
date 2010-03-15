@@ -60,3 +60,9 @@
 (vendor 'browse-kill-ring)
 (browse-kill-ring-default-keybindings)
 (setq browse-kill-ring-display-duplicates nil)
+
+; Drag-stuff mode -------------------------------------------------------------
+; It's a buffer local mode, so let's activate for each one.
+
+(vendor 'drag-stuff)
+(add-hook 'find-file-hook 'drag-stuff-mode)
