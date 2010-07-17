@@ -56,7 +56,7 @@
     (newline)              ;; ensures that there is at least one
     (delete-blank-lines))) ;; leaves at most one
 
-(add-hook 'before-save-hook 'jzn/delete-trailing-whitespace)
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 (add-hook 'before-save-hook 'jzn/delete-trailing-blank-lines)
 
 ; ------------------------------------------------------------------------------
@@ -160,5 +160,3 @@
       (insert-string
        (concat (if (= 0 (forward-line 1)) "" "\n") str "\n"))
       (forward-line -1))))
-
-
