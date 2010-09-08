@@ -6,7 +6,7 @@
 
 (eval-after-load 'ruby-mode
 	'(progn
-		 (add-hook 'ruby-mode-hook 
+		 (add-hook 'ruby-mode-hook
 							 '(lambda ()
                   (define-key ruby-mode-map (kbd "<return>") 'ruby-reindent-then-newline-and-indent)
                   (define-key ruby-mode-map "\C-c\C-d" 'rdebug)
@@ -33,9 +33,10 @@
 ;;              (delete-region (point-min) (point-max))))))
 ;;      (ad-activate 'ruby-do-run-w/compilation)))
 
-; There are all ruby files
+; These are all ruby files
 (add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.sake$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.thor$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Rakefile$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.gemspec$" . ruby-mode))
 
@@ -65,7 +66,7 @@
 	(delq nil (mapcar '(lambda(line)
 											 (if (string-match "rake \\([^ ]+\\)" line) (match-string 1 line)))
 										(split-string (shell-command-to-string "rake -T") "[\n]"))))
- 
+
 (defun rake (task)
 	(interactive (list (completing-read "Rake (default: default): "
 																			(pcmpl-rake-tasks))))
