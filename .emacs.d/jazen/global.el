@@ -37,7 +37,7 @@
 (setq visible-bell t)
 
 ; Only 'y' and 'n' please
-(defalias 'yes-or-no-p 'y-or-n-p)
+(fset 'yes-or-no-p 'y-or-n-p)
 
 ; Highlight region when selecting
 (setq transient-mark-mode t)
