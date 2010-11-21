@@ -15,7 +15,7 @@
 
 ; Prefer backward-kill-word over Backspace
 (global-set-key "\C-w" 'backward-kill-word) ; was kill-region
-(global-set-key "\C-x\C-k" 'kill-region)    
+(global-set-key "\C-x\C-k" 'kill-region)
 
 ; Duplicate line at point
 (global-set-key (kbd "C-x y") 'jzn/duplicate-line)
@@ -28,3 +28,6 @@
 
 ; M-g g (goto line)
 (global-set-key (kbd "<f5>") 'goto-line)
+
+; Delete buffer AND file (you will be prompted)
+(global-set-key (kbd "C-c k") 'delete-this-buffer-and-file)

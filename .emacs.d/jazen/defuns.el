@@ -21,9 +21,9 @@
 ; Alternate shell command ------------------------------------------------------
 
 (defun jazen-shell (&optional create)
-	"Start or switch to an inferior shell process, in a smart way. If a buffer 
+	"Start or switch to an inferior shell process, in a smart way. If a buffer
    with a running shell process exists, simply switch to that buffer.
-   If a shell buffer exists, but the shell process is not running, restart the 
+   If a shell buffer exists, but the shell process is not running, restart the
    shell.If already in an active shell buffer, switch to the next one, if any.
    With prefix argument CREATE always start a new shell."
 	(interactive "P")
@@ -48,7 +48,7 @@
 ;; Clear up files before saving them -------------------------------------------
 
 (defun jzn/delete-trailing-blank-lines ()
-  "Deletes all blank lines at the end of the file and leaves single 
+  "Deletes all blank lines at the end of the file and leaves single
    newline character."
   (interactive)
   (save-excursion
@@ -62,7 +62,7 @@
 ; ------------------------------------------------------------------------------
 
 (defun rename-file-and-buffer (new-name)
-	"Renames both current buffer and file it's visiting to NEW-NAME." 
+	"Renames both current buffer and file it's visiting to NEW-NAME."
 	(interactive "sNew name: ")
 	(let ((name (buffer-name))
 				(filename (buffer-file-name)))
@@ -70,15 +70,15 @@
 				(message "Buffer '%s' is not visiting a file!" name)
 			(if (get-buffer new-name)
 					(message "A buffer named '%s' already exists!" new-name)
-				(progn (rename-file name new-name 1) 	 
-							 (rename-buffer new-name) 	 
-							 (set-visited-file-name new-name) 	 
+				(progn (rename-file name new-name 1)
+							 (rename-buffer new-name)
+							 (set-visited-file-name new-name)
 							 (set-buffer-modified-p nil))))))
 
 ; ------------------------------------------------------------------------------
 
 (defun move-buffer-file (dir)
-	"Moves both current buffer and file it's visiting to DIR." 
+	"Moves both current buffer and file it's visiting to DIR."
 	(interactive "DNew directory: ")
 	(let* ((name (buffer-name))
 				 (filename (buffer-file-name))
@@ -88,11 +88,11 @@
 				 (newname (concat dir "/" name)))
 		(if (not filename)
 				(message "Buffer '%s' is not visiting a file!" name)
-			(progn  (copy-file filename newname 1) 	
-							(delete-file filename) 	
-							(set-visited-file-name newname) 	
-							(set-buffer-modified-p nil) 	
-							t)))) 
+			(progn  (copy-file filename newname 1)
+							(delete-file filename)
+							(set-visited-file-name newname)
+							(set-buffer-modified-p nil)
+							t))))
 
 ; ------------------------------------------------------------------------------
 
@@ -160,3 +160,16 @@
       (insert-string
        (concat (if (= 0 (forward-line 1)) "" "\n") str "\n"))
       (forward-line -1))))
+
+(defun jzn/delete-this-buffer-and-file ()
+  "Removes file connected to current buffer and kills buffer."
+  (interactive)
+  (let ((filename (buffer-file-name))
+        (buffer (current-buffer))
+        (name (buffer-name)))
+    (if (not (and filename (file-exists-p filename)))
+        (error "Buffer '%s' is not visiting a file!" name)
+      (when (yes-or-no-p "Are you sure you want to remove this file? ")
+        (delete-file filename)
+        (kill-buffer buffer)
+        (message "File '%s' successfully removed" filename)))))
