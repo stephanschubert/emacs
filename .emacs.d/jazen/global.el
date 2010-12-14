@@ -66,3 +66,6 @@
 
 (vendor 'drag-stuff)
 (add-hook 'find-file-hook 'drag-stuff-mode)
+
+; Remove unused buffers automatically
+(require 'midnight)
