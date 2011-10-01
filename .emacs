@@ -8,6 +8,7 @@
 (load "jazen/defuns")
 (load "jazen/bindings")
 (load "jazen/custom")
+(load "jazen/osx")
 (load "jazen/global")
 (load "jazen/shell")
 (load "jazen/ruby")
@@ -37,3 +38,6 @@
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
  )
+
+; Always run in server mode
+(if (not (server-mode)) (server-start))
