@@ -31,7 +31,9 @@
 (setq-default indent-tabs-mode nil)
 
 ; Ensure scrolling is enabled
-(mouse-wheel-mode t)
+(unless (eq system-type 'darwin)
+  (mouse-wheel-mode t)
+)
 
 ; Don't beep just flash
 (setq visible-bell t)
