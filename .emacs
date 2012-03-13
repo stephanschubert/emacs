@@ -24,6 +24,7 @@
 (load "jazen/cucumber")
 (load "jazen/nxml")
 (load "jazen/javascript")
+(load "jazen/restclient")
 
 (vendor 'egg)
 (custom-set-variables
