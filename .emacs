@@ -25,6 +25,7 @@
 (load "jazen/nxml")
 (load "jazen/javascript")
 (load "jazen/restclient")
+(load "jazen/window-number")
 
 (vendor 'egg)
 (custom-set-variables
