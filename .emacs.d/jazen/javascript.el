@@ -1,5 +1,8 @@
 ; js2
-(autoload 'js2-mode "js2" nil t)
+(add-to-list 'load-path "~/.emacs.d/vendor/j2-mode")
+(vendor 'js2-mode)
+
+;(autoload 'js2-mode "js2" nil t)
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 
 ; js-shell
@@ -17,7 +20,7 @@
 (defun js2-execute-line ()
   (interactive)
   (save-excursion
-    (call-process-region (point-at-bol) 
+    (call-process-region (point-at-bol)
                          (point-at-eol)
                          "johnson"
                          nil
@@ -28,7 +31,7 @@
       (message (buffer-string))
       (kill-buffer nil))))
 
-(add-hook 'js2-mode-hook 
+(add-hook 'js2-mode-hook
           '(lambda ()
              (define-key js2-mode-map (kbd "C-c b") 'js2-execute-buffer)
              (define-key js2-mode-map (kbd "C-c l") 'js2-execute-line)
