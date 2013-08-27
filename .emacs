@@ -18,6 +18,7 @@
 (load "jazen/sass")
 (load "jazen/theme")
 (load "jazen/icicles")
+(load "jazen/mustache")
 (load "jazen/textile")
 (load "jazen/jabber")
 (load "jazen/yasnippet")
