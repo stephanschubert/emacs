@@ -18,6 +18,8 @@
 (load "jazen/sass")
 (load "jazen/theme")
 (load "jazen/icicles")
+(load "jazen/mustache")
+(load "jazen/scss")
 (load "jazen/textile")
 (load "jazen/jabber")
 (load "jazen/yasnippet")
@@ -25,6 +27,7 @@
 (load "jazen/nxml")
 (load "jazen/javascript")
 (load "jazen/restclient")
+(load "jazen/window-number")
 
 (vendor 'egg)
 (custom-set-variables
