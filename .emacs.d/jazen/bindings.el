@@ -27,7 +27,7 @@
 (global-set-key (kbd "<f6>") 'query-replace)
 
 ; M-g g (goto line)
-(global-set-key (kbd "<f5>") 'goto-line)
+(global-set-key (kbd "C-x g") 'goto-line)
 
 ; Delete buffer AND file (you will be prompted)
 (global-set-key (kbd "C-c k") 'delete-this-buffer-and-file)
