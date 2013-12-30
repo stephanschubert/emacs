@@ -5,6 +5,7 @@
 (add-to-list 'load-path "~/.emacs.d/custom")
 
 (load "00-common")
+(load "01-ag")
 
 (add-to-list 'load-path "~/.emacs.d")
 (add-to-list 'load-path "~/.emacs.d/vendor")
