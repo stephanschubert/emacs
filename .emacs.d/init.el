@@ -1,3 +1,11 @@
+(require 'cask "~/.cask/cask.el")
+(cask-initialize)
+(require 'pallet)
+
+(add-to-list 'load-path "~/.emacs.d/custom")
+
+(load "00-common")
+
 (add-to-list 'load-path "~/.emacs.d")
 (add-to-list 'load-path "~/.emacs.d/vendor")
 (add-to-list 'load-path "~/.emacs.d/vendor/egg")
@@ -9,7 +17,7 @@
 (load "jazen/bindings")
 (load "jazen/custom")
 (load "jazen/osx")
-(load "jazen/global")
+;;(load "jazen/global")
 (load "jazen/shell")
 (load "jazen/ruby")
 (load "jazen/rails")
@@ -17,19 +25,20 @@
 (load "jazen/haml")
 (load "jazen/sass")
 (load "jazen/theme")
-(load "jazen/icicles")
+;(load "jazen/icicles") Broken?
 (load "jazen/mustache")
 (load "jazen/scss")
 (load "jazen/textile")
-(load "jazen/jabber")
+;(load "jazen/jabber") Obsolete?
 (load "jazen/yasnippet")
-(load "jazen/cucumber")
+;(load "jazen/cucumber") Obsolete?
 (load "jazen/nxml")
-(load "jazen/javascript")
+;(load "jazen/javascript") Broken?
 (load "jazen/restclient")
 (load "jazen/window-number")
 
 (vendor 'egg)
+
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.
