@@ -2,5 +2,6 @@
 (source "gnu" "http://elpa.gnu.org/packages/")
 (source "marmalade" "http://marmalade-repo.org/packages/")
 
+(depends-on "ag")
 (depends-on "auto-complete")
 (depends-on "pallet")
