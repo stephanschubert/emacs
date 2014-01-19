@@ -2,11 +2,14 @@
 (cask-initialize)
 (require 'pallet)
 
+(add-to-list 'load-path "~/.emacs.d/bundle/smartparens")
 (add-to-list 'load-path "~/.emacs.d/custom")
 
 (load "00-common")
 (load "01-ag")
+(load "01-auto-complete")
 (load "01-ruby")
+(load "01-smartparens")
 
 (add-to-list 'load-path "~/.emacs.d")
 (add-to-list 'load-path "~/.emacs.d/vendor")
