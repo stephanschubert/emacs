@@ -6,6 +6,7 @@
 
 (load "00-common")
 (load "01-ag")
+(load "01-ruby")
 
 (add-to-list 'load-path "~/.emacs.d")
 (add-to-list 'load-path "~/.emacs.d/vendor")

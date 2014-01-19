@@ -1,7 +1,8 @@
-(source "melpa" "http://melpa.milkbox.net/packages/")
-(source "gnu" "http://elpa.gnu.org/packages/")
-(source "marmalade" "http://marmalade-repo.org/packages/")
+(source melpa)
+(source gnu)
+(source marmalade)
 
 (depends-on "ag")
 (depends-on "auto-complete")
+(depends-on "enh-ruby-mode")
 (depends-on "pallet")
