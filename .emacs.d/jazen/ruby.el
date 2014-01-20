@@ -41,6 +41,7 @@
 (add-to-list 'auto-mode-alist '("Rakefile$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Gemfile$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.gemspec$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.html.ui$" . ruby-mode))
 
 ; We never want to edit Rubinius bytecode
 (add-to-list 'completion-ignored-extensions ".rbc")

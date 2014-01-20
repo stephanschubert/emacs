@@ -7,6 +7,7 @@
 
 (load "jazen/defuns")
 (load "jazen/bindings")
+(load "jazen/coffeescript")
 (load "jazen/custom")
 (load "jazen/osx")
 (load "jazen/global")
@@ -16,10 +17,9 @@
 (load "jazen/yaml")
 (load "jazen/haml")
 (load "jazen/sass")
-(load "jazen/theme")
-(load "jazen/icicles")
 (load "jazen/mustache")
 (load "jazen/scss")
+;(load "jazen/icicles") Broken?
 (load "jazen/textile")
 (load "jazen/jabber")
 (load "jazen/yasnippet")
@@ -30,18 +30,9 @@
 (load "jazen/window-number")
 
 (vendor 'egg)
-(custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
- )
-(custom-set-faces
-  ;; custom-set-faces was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
- )
 
 ; Always run in server mode
 (if (not (server-mode)) (server-start))
+
+; Got some issues so will be loaded last so it wont interfere with other stuff.
+(load "jazen/theme")
