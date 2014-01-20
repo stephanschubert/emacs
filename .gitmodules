@@ -13,6 +13,3 @@
 [submodule ".emacs.d/vendor/restclient"]
   path = .emacs.d/vendor/restclient
   url = https://github.com/pashky/restclient.el.git
-[submodule ".emacs.d/vendor/coffee-mode"]
-	path = .emacs.d/vendor/coffee-mode
-	url = git@github.com:defunkt/coffee-mode.git
