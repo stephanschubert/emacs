@@ -46,3 +46,10 @@
             (local-set-key (kbd "C-c l") 'rspec-compile-on-line)
             (local-set-key (kbd "C-c k") 'rspec-compile-file)
             ))
+
+;; Setup rbenv w/ bundler
+(global-rbenv-mode)
+
+;; Setup robe mode for ruby w/ auto-complete support
+(add-hook 'enh-ruby-mode-hook 'robe-mode)
+(add-hook 'robe-mode 'robe-ac-setup)
