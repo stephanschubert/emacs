@@ -7,6 +7,7 @@
 (depends-on "bundler")
 (depends-on "enh-ruby-mode")
 (depends-on "flx-ido")
+(depends-on "ido-vertical-mode")
 (depends-on "pallet")
 (depends-on "projectile")
 (depends-on "rbenv")
