@@ -36,7 +36,9 @@
 (setq-default indent-tabs-mode nil)
 
 ;; Use windmove bindings
-;; Navigate between windows using Alt-1, Alt-2, Shift-left, shift-up, shift-right
+;; Navigate between windows using Alt-1, Alt-2, Shift-left, Shift-up, Shift-right
+;; OSX fix: http://zurktech.blogspot.ch/2014/01/emacs-windmove-and-mavericks-terminalapp.html
+(define-key input-decode-map "\e[1;2A" [S-up])
 (windmove-default-keybindings)
 
 ;; Don't beep just flash
