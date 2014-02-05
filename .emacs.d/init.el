@@ -9,6 +9,7 @@
 (load "01-ag")
 (load "01-auto-complete")
 (load "01-ido")
+(load "01-magit")
 (load "01-projectile")
 (load "01-ruby")
 (load "01-smartparens")
