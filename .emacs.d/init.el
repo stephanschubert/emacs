@@ -18,7 +18,6 @@
 
 (add-to-list 'load-path "~/.emacs.d")
 (add-to-list 'load-path "~/.emacs.d/vendor")
-(add-to-list 'load-path "~/.emacs.d/vendor/egg")
 
 ;; Explicit loading without load-path adjustment because
 ;; some names could clash with other libraries.
@@ -43,8 +42,6 @@
 (load "jazen/nxml")
 (load "jazen/restclient")
 (load "jazen/window-number")
-
-(vendor 'egg)
 
 ;; Always run in server mode
 (if (not (server-mode)) (server-start))
