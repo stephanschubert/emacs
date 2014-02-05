@@ -8,6 +8,7 @@
 (load "00-common")
 (load "01-ag")
 (load "01-auto-complete")
+(load "01-dash")
 (load "01-ido")
 (load "01-magit")
 (load "01-projectile")
