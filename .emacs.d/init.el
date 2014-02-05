@@ -10,6 +10,7 @@
 (load "01-auto-complete")
 (load "01-dash")
 (load "01-ido")
+(load "01-highlight-indentation")
 (load "01-magit")
 (load "01-projectile")
 (load "01-ruby")
