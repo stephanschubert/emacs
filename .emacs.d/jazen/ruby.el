@@ -11,14 +11,14 @@
                   (define-key ruby-mode-map (kbd "<return>") 'ruby-reindent-then-newline-and-indent)
                   (define-key ruby-mode-map "\C-c\C-d" 'rdebug)
 
-									(require 'ruby-electric)
-									(ruby-electric-mode t)
+;									(require 'ruby-electric)
+;									(ruby-electric-mode t)
 
 									(require 'ri)
 									(local-set-key [f1] 'ri)
 
 									(require 'ruby-compilation)
-									(require 'inf-ruby)
+;									(require 'inf-ruby)
 									(inf-ruby-keys)))
 ))
 
