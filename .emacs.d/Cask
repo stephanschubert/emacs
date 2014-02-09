@@ -15,3 +15,4 @@
 (depends-on "projectile")
 (depends-on "rbenv")
 (depends-on "robe")
+(depends-on "tramp")
