@@ -43,9 +43,6 @@
 (load "jazen/restclient")
 (load "jazen/window-number")
 
-;; Always run in server mode
-(if (not (server-mode)) (server-start))
-
 ;; Got some issues so will be loaded last so it wont interfere with other stuff.
 (load "jazen/theme")
 (custom-set-variables
