@@ -53,14 +53,14 @@
       (insert "{}")
       (backward-char 1))))
 
-;; (defun ruby-reindent-then-newline-and-indent ()
-;; 	(interactive "*")
-;;   (newline)
-;;   (save-excursion
-;;     (end-of-line 0)
-;;     (indent-according-to-mode)
-;;     (delete-region (point) (progn (skip-chars-backward " \t") (point))))
-;;   (indent-according-to-mode))
+(defun ruby-reindent-then-newline-and-indent ()
+	(interactive "*")
+  (newline)
+  (save-excursion
+    (end-of-line 0)
+    (indent-according-to-mode)
+    (delete-region (point) (progn (skip-chars-backward " \t") (point))))
+  (indent-according-to-mode))
 
 ;; Setup inf-ruby
 ;; (require 'inf-ruby)
@@ -79,8 +79,8 @@
 (global-rbenv-mode)
 
 ;; Setting rbenv path
-;(setenv "PATH" (concat (getenv "HOME") "/.rbenv/shims:" (getenv "HOME") "/.rbenv/bin:" (getenv "PATH")))
-;(setq exec-path (cons (concat (getenv "HOME") "/.rbenv/shims") (cons (concat (getenv "HOME") "/.rbenv/bin") exec-path)))
+(setenv "PATH" (concat (getenv "HOME") "/.rbenv/shims:" (getenv "HOME") "/.rbenv/bin:" (getenv "PATH")))
+(setq exec-path (cons (concat (getenv "HOME") "/.rbenv/shims") (cons (concat (getenv "HOME") "/.rbenv/bin") exec-path)))
 
 ;; Setup robe mode for ruby w/ auto-complete support
 (add-hook 'enh-ruby-mode-hook 'robe-mode)
@@ -88,6 +88,7 @@
 
 (add-hook 'enh-ruby-mode-hook
           (lambda ()
+            (local-set-key (kbd "enter") 'ruby-reindent-then-newline-and-indent)
             (local-set-key (kbd "C-c l") 'rspec-compile-on-line)
             (local-set-key (kbd "C-c k") 'rspec-compile-file)
             (local-set-key (kbd "#") 'ruby-interpolate)
