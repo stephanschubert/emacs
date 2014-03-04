@@ -88,7 +88,7 @@
 
 (add-hook 'enh-ruby-mode-hook
           (lambda ()
-            (local-set-key (kbd "enter") 'ruby-reindent-then-newline-and-indent)
+            (local-set-key (kbd "RET") 'ruby-reindent-then-newline-and-indent)
             (local-set-key (kbd "C-c l") 'rspec-compile-on-line)
             (local-set-key (kbd "C-c k") 'rspec-compile-file)
             (local-set-key (kbd "#") 'ruby-interpolate)

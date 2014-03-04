@@ -9,6 +9,7 @@
 (load "01-ag")
 (load "01-auto-complete")
 (load "01-dash")
+(load "01-haml")
 (load "01-ido")
 (load "01-highlight-indentation")
 (load "01-magit")
@@ -32,7 +33,6 @@
 ;(load "jazen/ruby")
 ;(load "jazen/rails")
 (load "jazen/yaml")
-(load "jazen/haml")
 (load "jazen/sass")
 ;; (load "jazen/icicles") Broken?
 (load "jazen/mustache")
