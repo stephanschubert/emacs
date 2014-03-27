@@ -11,6 +11,7 @@
 (load "01-dash")
 (load "01-haml")
 (load "01-ido")
+(load "01-helm")
 (load "01-highlight-indentation")
 (load "01-magit")
 (load "01-powerline")
