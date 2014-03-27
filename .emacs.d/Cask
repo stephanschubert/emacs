@@ -13,6 +13,7 @@
 (depends-on "ido-vertical-mode")
 (depends-on "magit")
 (depends-on "pallet")
+(depends-on "powerline")
 (depends-on "projectile")
 (depends-on "rainbow-mode")
 (depends-on "rbenv")
