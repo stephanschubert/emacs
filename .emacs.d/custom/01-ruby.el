@@ -63,16 +63,16 @@
   (indent-according-to-mode))
 
 ;; Setup inf-ruby
-;; (require 'inf-ruby)
-;; (autoload 'run-ruby "inf-ruby"
-;;           "Run an inferior Ruby process")
+(require 'inf-ruby)
+(autoload 'run-ruby "inf-ruby"
+          "Run an inferior Ruby process")
 
-;; (autoload 'inf-ruby-keys "inf-ruby"
-;;           "Set local key defs for inf-ruby in ruby-mode")
+(autoload 'inf-ruby-keys "inf-ruby"
+          "Set local key defs for inf-ruby in ruby-mode")
 
-;; (autoload 'inf-ruby "inf-ruby" "Run an inferior Ruby process" t)
-;; (add-hook 'enh-ruby-mode-hook 'inf-ruby-minor-mode)
-;; (add-hook 'after-init-hook 'inf-ruby-switch-setup)
+(autoload 'inf-ruby "inf-ruby" "Run an inferior Ruby process" t)
+(add-hook 'enh-ruby-mode-hook 'inf-ruby-minor-mode)
+(add-hook 'after-init-hook 'inf-ruby-switch-setup)
 
 ;; Setup rbenv w/ bundler
 (require 'rbenv)
