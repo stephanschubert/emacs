@@ -41,8 +41,8 @@
 (load "jazen/scss")
 (load "jazen/textile")
 (load "jazen/yasnippet")
-(load "jazen/nxml")
-(load "jazen/restclient")
+;;(load "jazen/nxml")
+;;(load "jazen/restclient")
 (load "jazen/window-number")
 
 ;; Got some issues so will be loaded last so it wont interfere with other stuff.
