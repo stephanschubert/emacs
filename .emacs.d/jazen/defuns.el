@@ -1,11 +1,11 @@
-; Reload ~/.emacs on the fly ---------------------------------------------------
+; Reload Emacs configuration on the fly ----------------------------------------
 
-(defun reload-dot-emacs ()
+(defun reload-emacs ()
 	(interactive)
-	(if (bufferp (get-file-buffer ".emacs"))
-			(save-buffer (get-buffer ".emacs")))
-	(load-file "~/.emacs")
-	(message ".emacs reloaded successfully"))
+	(if (bufferp (get-file-buffer "init.el"))
+			(save-buffer (get-buffer "init.el")))
+	(load-file "~/.emacs.d/init.el")
+	(message "Reloaded Emacs configuration successfully."))
 
 ; For loading libraries from the vendor directory ------------------------------
 

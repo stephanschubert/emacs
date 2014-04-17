@@ -1,9 +1,6 @@
 [submodule ".emacs.d/vendor/rails"]
 	path = .emacs.d/vendor/rails
 	url = https://github.com/remvee/emacs-rails.git
-[submodule ".emacs.d/vendor/egg"]
-	path = .emacs.d/vendor/egg
-	url = https://github.com/bogolisk/egg.git
 [submodule ".emacs.d/vendor/feature-mode"]
 	path = .emacs.d/vendor/feature-mode
 	url = https://github.com/michaelklishin/cucumber.el.git
