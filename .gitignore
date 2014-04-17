@@ -1,3 +1,6 @@
 .DS_Store
 *#*#
 *~
+
+# Database from auto-complete mode for Emacs.
+ac-comphist.dat
