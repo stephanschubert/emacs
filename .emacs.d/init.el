@@ -10,6 +10,7 @@
 (load "01-ag")
 (load "01-auto-complete")
 (load "01-dash")
+(load "01-expand-region")
 (load "01-haml")
 (load "01-ido")
 (load "01-helm")

@@ -8,3 +8,4 @@
 (key-chord-define-global "ää" "{}\C-b")
 (key-chord-define-global "uu" 'undo)
 (key-chord-define-global "yy" 'helm-show-kill-ring)
+(key-chord-define-global "++" 'er/expand-region)
