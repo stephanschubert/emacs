@@ -14,6 +14,7 @@
 (load "01-ido")
 (load "01-helm")
 (load "01-highlight-indentation")
+(load "01-key-chord")
 (load "01-magit")
 (load "01-powerline")
 (load "01-projectile")
