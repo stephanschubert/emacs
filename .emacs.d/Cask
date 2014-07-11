@@ -9,6 +9,8 @@
 (depends-on "dash-at-point")
 (depends-on "enh-ruby-mode")
 (depends-on "expand-region")
+(depends-on "flycheck")
+(depends-on "flycheck-color-mode-line")
 (depends-on "haml-mode")
 (depends-on "helm")
 (depends-on "highlight-indentation")

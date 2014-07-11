@@ -11,6 +11,7 @@
 (load "01-auto-complete")
 (load "01-dash")
 (load "01-expand-region")
+(load "01-flycheck")
 (load "01-haml")
 (load "01-ido")
 (load "01-helm")
@@ -119,4 +120,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(flycheck-color-mode-line-error-face ((t (:inherit flycheck-fringe-error :background "color-197" :foreground "black" :weight normal))))
+ '(flycheck-color-mode-line-info-face ((t (:inherit flycheck-fringe-info :foreground "green" :weight normal))))
+ '(flycheck-color-mode-line-warning-face ((t (:inherit flycheck-fringe-warning :foreground "yellow" :weight normal))))
+ '(flycheck-error ((t (:underline "color-197")))))

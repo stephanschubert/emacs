@@ -80,6 +80,7 @@
 ;; Setup rbenv w/ bundler
 (require 'rbenv)
 (global-rbenv-mode)
+(rbenv-use-global)
 
 ;; Setting rbenv path
 (setenv "PATH" (concat (getenv "HOME") "/.rbenv/shims:" (getenv "HOME") "/.rbenv/bin:" (getenv "PATH")))
