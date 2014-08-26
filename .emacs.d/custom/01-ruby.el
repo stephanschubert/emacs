@@ -86,9 +86,8 @@
 (setenv "PATH" (concat (getenv "HOME") "/.rbenv/shims:" (getenv "HOME") "/.rbenv/bin:" (getenv "PATH")))
 (setq exec-path (cons (concat (getenv "HOME") "/.rbenv/shims") (cons (concat (getenv "HOME") "/.rbenv/bin") exec-path)))
 
-;; Setup robe mode for ruby w/ auto-complete support
-(add-hook 'enh-ruby-mode-hook 'robe-mode)
-(add-hook 'robe-mode 'robe-ac-setup)
+;; Setup company and robe
+(push 'company-robe company-backends)
 
 (add-hook 'enh-ruby-mode-hook
           (lambda ()
