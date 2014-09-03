@@ -61,8 +61,24 @@
 ;; Save a list of recent files visited
 (recentf-mode 1)
 
-;; TODO
-;; ;; Setup browse-kill-ring
+;; Stop polluting the directory with auto-saved files and backup
+(setq auto-save-default nil)
+(setq make-backup-files nil)
+
+;; Number of lines of continuity when scrolling by screenfuls.
+(setq next-screen-context-lines 0)
+
+(setq sentence-end-double-space t)
+(setq require-final-newline t)
+
+(setq-default line-spacing nil)
+(setq fill-column 70)
+(setq line-move-visual nil)
+(setq show-trailing-whitespace t)
+(setq initial-scratch-message "")
+(setq inhibit-startup-message t)
+(setq visible-bell t)
+
 ;; (vendor 'browse-kill-ring)
 ;; (browse-kill-ring-default-keybindings)
 ;; (setq browse-kill-ring-display-duplicates nil)
