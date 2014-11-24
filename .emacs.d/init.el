@@ -24,34 +24,34 @@
 (load "01-ruby")
 (load "01-smartparens")
 
-(add-to-list 'load-path "~/.emacs.d")
+(add-to-list 'load-path "~/.emacs.d/jazen")
 (add-to-list 'load-path "~/.emacs.d/vendor")
 
 ;; Explicit loading without load-path adjustment because
 ;; some names could clash with other libraries.
 
-(load "jazen/defuns")
-(load "jazen/bindings")
-(load "jazen/coffeescript")
-(load "jazen/custom")
-(load "jazen/osx")
-;; (load "jazen/global")
-(load "jazen/shell")
-;(load "jazen/ruby")
-;(load "jazen/rails")
-(load "jazen/yaml")
-(load "jazen/sass")
-;; (load "jazen/icicles") Broken?
-(load "jazen/mustache")
-(load "jazen/scss")
-(load "jazen/textile")
-(load "jazen/yasnippet")
-;;(load "jazen/nxml")
-;;(load "jazen/restclient")
-(load "jazen/window-number")
+(load "defuns")
+(load "bindings")
+(load "coffeescript")
+(load "custom")
+(load "osx")
+;; (load "global")
+(load "shell")
+;(load "ruby")
+;(load "rails")
+(load "yaml")
+(load "sass")
+;; (load "icicles") Broken?
+(load "mustache")
+(load "scss")
+(load "textile")
+(load "yasnippet")
+;;(load "nxml")
+;;(load "restclient")
+(load "window-number")
 
 ;; Got some issues so will be loaded last so it wont interfere with other stuff.
-(load "jazen/theme")
+(load "theme")
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
