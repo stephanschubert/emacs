@@ -25,3 +25,4 @@
 (depends-on "rbenv")
 (depends-on "robe")
 (depends-on "tramp")
+(depends-on "window-number")

@@ -23,6 +23,7 @@
 (load "01-projectile")
 (load "01-ruby")
 (load "01-smartparens")
+(load "01-window-number")
 
 (add-to-list 'load-path "~/.emacs.d/jazen")
 (add-to-list 'load-path "~/.emacs.d/vendor")
@@ -48,7 +49,6 @@
 (load "yasnippet")
 ;;(load "nxml")
 ;;(load "restclient")
-(load "window-number")
 
 ;; Got some issues so will be loaded last so it wont interfere with other stuff.
 (load "theme")
