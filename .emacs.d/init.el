@@ -6,6 +6,7 @@
 (add-to-list 'load-path "~/.emacs.d/custom")
 
 (load "00-common")
+(load "00-bindings")
 (load "00-functions")
 (load "01-ace-jump-mode")
 (load "01-ag")
