@@ -14,6 +14,7 @@
 (depends-on "haml-mode")
 (depends-on "helm")
 (depends-on "highlight-indentation")
+(depends-on "jabber")
 (depends-on "flx-ido")
 (depends-on "ido-vertical-mode")
 (depends-on "key-chord")
