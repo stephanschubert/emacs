@@ -18,4 +18,4 @@
   '(ace-jump-mode-enable-mark-sync))
 
 (define-key global-map (kbd "C-x SPC") 'ace-jump-mode-pop-mark)
-(define-key global-map (kbd "M-z") 'ace-jump-zap-to-char)
+(define-key global-map (kbd "C-z") 'ace-jump-zap-to-char)
