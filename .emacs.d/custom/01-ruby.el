@@ -6,6 +6,7 @@
 (add-to-list 'auto-mode-alist '("\\.gemspec$" . enh-ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.ru$" . enh-ruby-mode))
 (add-to-list 'auto-mode-alist '("Gemfile$" . enh-ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.ui$" . enh-ruby-mode))
 
 ;(add-to-list 'interpreter-mode-alist '("ruby" . enh-ruby-mode))
 
@@ -15,7 +16,7 @@
 ; Disable ridiculous indentation
 (setq ruby-deep-indent-paren nil)
 
-(defun* get-closest-gemfile-root (&optional (file "Gemfile"))
+(defun get-closest-gemfile-root (&optional (file "Gemfile"))
   "Determine the pathname of the first instance of FILE starting from the current directory
    towards root. This may not do the correct thing in presence of links. If it does not find FILE,
    then it shall return the name of FILE in the current directory, suitable for creation"
@@ -75,6 +76,8 @@
 
 (autoload 'inf-ruby "inf-ruby" "Run an inferior Ruby process" t)
 (add-hook 'enh-ruby-mode-hook 'inf-ruby-minor-mode)
+
+;; Easily switch from common Ruby compilation modes to interact with a debugger.
 (add-hook 'after-init-hook 'inf-ruby-switch-setup)
 
 ;; Setup rbenv w/ bundler
@@ -87,6 +90,7 @@
 (setq exec-path (cons (concat (getenv "HOME") "/.rbenv/shims") (cons (concat (getenv "HOME") "/.rbenv/bin") exec-path)))
 
 ;; Setup company and robe
+(add-hook 'enh-ruby-mode-hook 'robe-mode)
 (push 'company-robe company-backends)
 
 (add-hook 'enh-ruby-mode-hook
