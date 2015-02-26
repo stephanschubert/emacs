@@ -69,6 +69,7 @@
 (setq next-screen-context-lines 0)
 
 (setq sentence-end-double-space t)
+(setq next-line-add-newlines t)
 (setq require-final-newline t)
 
 (setq-default line-spacing nil)
@@ -88,3 +89,41 @@
 
 ;; (vendor 'drag-stuff)
 ;; (add-hook 'find-file-hook 'drag-stuff-mode)
+
+(defun smarter-move-beginning-of-line (arg)
+  "Move point back to indentation of beginning of line.
+
+Move point to the first non-whitespace character on this line.
+If point is already there, move to the beginning of the line.
+Effectively toggle between the first non-whitespace character and
+the beginning of the line.
+
+If ARG is not nil or 1, move forward ARG - 1 lines first.  If
+point reaches the beginning or end of the buffer, stop there."
+  (interactive "^p")
+  (setq arg (or arg 1))
+
+  ;; Move lines first
+  (when (/= arg 1)
+    (let ((line-move-visual nil))
+      (forward-line (1- arg))))
+
+  (let ((orig-point (point)))
+    (back-to-indentation)
+    (when (= orig-point (point))
+      (move-beginning-of-line 1))))
+
+;; remap C-a to `smarter-move-beginning-of-line'
+(global-set-key [remap move-beginning-of-line]
+                'smarter-move-beginning-of-line)
+
+;; (defun smart-open-line-above ()
+;;   "Insert an empty line above the current line.
+;; Position the cursor at it's beginning, according to the current mode."
+;;   (interactive)
+;;   (move-beginning-of-line nil)
+;;   (newline-and-indent)
+;;   (forward-line -1)
+;;   (indent-according-to-mode))
+;;
+;; (global-set-key (kbd "C-o") 'smart-open-line-above)
