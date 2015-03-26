@@ -2,8 +2,7 @@
 (setq inhibit-splash-screen t)
 (setq inhibit-startup-message t)
 
-;; Use terminus as font
-(set-default-font "-*-terminus-medium-r-*-*-*-120-75-75-*-*-iso8859-15")
+(setq ns-use-srgb-colorspace nil)
 
 ;; To get rid of Weird color escape sequences in Emacs.
 ;; Instruct Emacs to use emacs term-info not system term info
