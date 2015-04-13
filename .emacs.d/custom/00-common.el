@@ -32,6 +32,7 @@
 ;; 1 tab == 2 spaces; EOD
 (setq-default c-basic-offset 2)
 (setq-default tab-width 2)
+(setq-default css-indent-offset 2)
 (setq-default indent-tabs-mode nil)
 
 ;; Use windmove bindings
