@@ -16,6 +16,8 @@
 (depends-on "haml-mode")
 (depends-on "helm")
 (depends-on "highlight-indentation")
+(depends-on "ibuffer-vc")
+(depends-on "ibuffer-tramp")
 (depends-on "jabber")
 (depends-on "flx-ido")
 (depends-on "ido-vertical-mode")

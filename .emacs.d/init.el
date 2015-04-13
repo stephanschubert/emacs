@@ -17,6 +17,7 @@
 (load "01-haml")
 (load "01-helm")
 (load "01-highlight-indentation")
+(load "01-ibuffer")
 (load "01-ido")
 (load "01-isearch")
 (load "01-jabber")
