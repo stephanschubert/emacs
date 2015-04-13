@@ -28,3 +28,11 @@
       (insert replacement sub replacement))))
 
 (global-set-key (kbd "C-c C-t") 'jzn/toggle-quotes)
+
+(defun jzn/newline-before-this-line ()
+  (interactive)
+  (beginning-of-line)
+  (open-line 1)
+  (funcall indent-line-function))
+
+(global-set-key (kbd "M-o") 'jzn/newline-before-this-line)
