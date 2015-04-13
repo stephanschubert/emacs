@@ -2,5 +2,5 @@
 *#*#
 *~
 
-# Database from auto-complete mode for Emacs.
-ac-comphist.dat
+ac-comphist.dat # Database from auto-complete mode for Emacs.
+recentf
