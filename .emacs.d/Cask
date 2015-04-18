@@ -27,5 +27,6 @@
 (depends-on "rainbow-mode")
 (depends-on "rbenv")
 (depends-on "robe")
+(depends-on "swiper-helm")
 (depends-on "tramp")
 (depends-on "window-number")
