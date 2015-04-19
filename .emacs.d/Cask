@@ -7,6 +7,7 @@
 (depends-on "ag")
 (depends-on "bundler")
 (depends-on "company")
+(depends-on "counsel")
 (depends-on "dash-at-point")
 (depends-on "enh-ruby-mode")
 (depends-on "expand-region")
