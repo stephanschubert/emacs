@@ -36,3 +36,17 @@
   (funcall indent-line-function))
 
 (global-set-key (kbd "M-o") 'jzn/newline-before-this-line)
+
+;; See: http://emacs.stackexchange.com/questions/10359/delete-portion-of-isearch-string-that-does-not-match-or-last-char-if-complete-m
+;; Alt: Use isearch+.el for more extensions.
+(defun jzn/isearch-delete ()
+  "Delete the failed portion of the search string, or the last char if successful."
+  (interactive)
+  (with-isearch-suspended
+      (setq isearch-new-string
+            (substring
+             isearch-string 0 (or (isearch-fail-pos) (1- (length isearch-string))))
+            isearch-new-message
+            (mapconcat 'isearch-text-char-description isearch-new-string ""))))
+
+(define-key isearch-mode-map (kbd "DEL") 'jzn/isearch-delete)
