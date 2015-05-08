@@ -2,6 +2,9 @@
 (setq inhibit-splash-screen t)
 (setq inhibit-startup-message t)
 
+;; https://www.masteringemacs.org/article/improving-performance-emacs-display-engine
+(setq redisplay-dont-pause t)
+
 (setq ns-use-srgb-colorspace nil)
 
 ;; To get rid of Weird color escape sequences in Emacs.
