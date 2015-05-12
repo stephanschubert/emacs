@@ -13,6 +13,7 @@
 (load "01-company-mode")
 (load "01-counsel")
 (load "01-dash")
+(load "01-dockerfile")
 (load "01-expand-region")
 (load "01-flycheck")
 (load "01-haml")
