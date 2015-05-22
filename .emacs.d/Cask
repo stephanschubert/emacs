@@ -32,3 +32,4 @@
 (depends-on "swiper-helm")
 (depends-on "tramp")
 (depends-on "window-number")
+(depends-on "wrap-region")

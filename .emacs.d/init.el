@@ -29,6 +29,7 @@
 (load "01-ruby")
 (load "01-smartparens")
 (load "01-window-number")
+(load "01-wrap-region")
 
 (add-to-list 'load-path "~/.emacs.d/jazen")
 (add-to-list 'load-path "~/.emacs.d/vendor")
