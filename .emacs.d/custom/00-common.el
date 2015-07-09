@@ -64,6 +64,9 @@
 ;; Save a list of recent files visited
 (recentf-mode 1)
 
+;; Revert buffers automatically when switching branches.
+(global-auto-revert-mode t)
+
 ;; Stop polluting the directory with auto-saved files and backup
 (setq auto-save-default nil)
 (setq make-backup-files nil)
