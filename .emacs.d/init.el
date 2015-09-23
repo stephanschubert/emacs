@@ -54,6 +54,7 @@
 ;(load "rails")
 (load "yaml")
 (load "sass")
+(load "01-scss")
 ;; (load "icicles") Broken?
 (load "mustache")
 (load "scss")
