@@ -30,6 +30,7 @@
 (load "01-isearch")
 (load "01-jabber")
 (load "01-key-chord")
+(load "01-key-combo")
 (load "01-magit")
 (load "01-powerline")
 (load "01-projectile")

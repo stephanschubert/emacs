@@ -23,6 +23,7 @@
 (depends-on "ibuffer-tramp")
 (depends-on "jabber")
 (depends-on "key-chord")
+(depends-on "key-combo")
 (depends-on "magit")
 (depends-on "pallet")
 (depends-on "powerline")

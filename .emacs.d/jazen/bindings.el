@@ -24,7 +24,3 @@
 
 ; Delete buffer AND file (you will be prompted)
 (global-set-key (kbd "C-c k") 'delete-this-buffer-and-file)
-
-; Move to beginning/end of line or to the previous/next line if already there.
-(global-set-key (kbd "C-e") 'jzn/move-end-of-line-or-next-line)
-(global-set-key (kbd "C-a") 'jzn/move-start-of-line-or-previous-line)

@@ -171,15 +171,3 @@
           (delete-file filename)
           (message "Deleted file %s" filename)
           (kill-buffer))))))
-
-(defun jzn/move-end-of-line-or-next-line ()
-  (interactive)
-  (if (eolp)
-      (next-line)
-    (move-end-of-line nil)))
-
-(defun jzn/move-start-of-line-or-previous-line ()
-  (interactive)
-  (if (bolp)
-      (previous-line)
-    (move-beginning-of-line nil)))
