@@ -17,6 +17,7 @@
 (load "01-ace-jump-mode")
 (load "01-ag")
 (load "01-company-mode")
+(load "01-coffee-mode")
 (load "01-counsel")
 (load "01-dash")
 (load "01-dockerfile")
@@ -45,7 +46,6 @@
 
 (load "defuns")
 (load "bindings")
-(load "coffeescript")
 (load "custom")
 (load "osx")
 ;; (load "global")
