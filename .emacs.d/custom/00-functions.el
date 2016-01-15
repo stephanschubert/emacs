@@ -1,3 +1,9 @@
+(defun jzn/find-file-as-sudo ()
+  (interactive)
+  (let ((file-name (buffer-file-name)))
+    (when file-name
+      (find-alternate-file (concat "/sudo::" file-name)))))
+
 (defun jzn/toggle-quotes ()
   "Toggle single quoted string to double or vice versa, and
   flip the internal quotes as well.  Best to run on the first
