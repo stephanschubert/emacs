@@ -85,3 +85,6 @@
 (setq initial-scratch-message "")
 (setq inhibit-startup-message t)
 (setq visible-bell t)
+
+;; Activate region-state mode to show selected number of lines/characters.
+(region-state-mode 1)

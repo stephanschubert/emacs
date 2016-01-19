@@ -35,6 +35,7 @@
 (depends-on "scss-mode")
 (depends-on "sourcemap")
 (depends-on "swiper-helm")
+(depends-on "region-state")
 (depends-on "tramp")
 (depends-on "window-number")
 (depends-on "wrap-region")
