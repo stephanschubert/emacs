@@ -17,6 +17,7 @@
 (depends-on "flycheck-color-mode-line")
 (depends-on "flx")
 (depends-on "git-timemachine")
+(depends-on "guide-key")
 (depends-on "haml-mode")
 (depends-on "helm")
 (depends-on "highlight-indentation")
