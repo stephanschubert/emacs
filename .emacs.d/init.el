@@ -66,92 +66,124 @@
 
 ;; Got some issues so will be loaded last so it wont interfere with other stuff.
 (load "theme")
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ag-reuse-window t t)
+ '(coffee-args-compile (quote ("-c" "-m" "--no-header" "--bare")))
+ '(coffee-tab-width 4)
+ '(helm-css-scss-split-with-multiple-windows t)
  '(js-indent-level 2)
  '(mode-line-format
-   (quote ("%e"
- (:eval
-  (let*
-      ((active
-        (powerline-selected-window-active))
-       (mode-line
-        (if active 'mode-line 'mode-line-inactive))
-       (face1
-        (if active 'powerline-active1 'powerline-inactive1))
-       (face2
-        (if active 'powerline-active2 'powerline-inactive2))
-       (separator-left
-        (intern
-         (format "powerline-%s-%s"
-                 (powerline-current-separator)
-                 (car powerline-default-separator-dir))))
-       (separator-right
-        (intern
-         (format "powerline-%s-%s"
-                 (powerline-current-separator)
-                 (cdr powerline-default-separator-dir))))
-       (lhs
-        (list
-         (powerline-raw "%l:%c " face1 'l)
-         (funcall separator-left face1 mode-line)
-         (powerline-raw "%*" nil 'l)
-         (when powerline-display-buffer-size
-           (powerline-buffer-size nil 'l))
-         (when powerline-display-mule-info
-           (powerline-raw mode-line-mule-info nil 'l))
-         (powerline-buffer-id nil 'l)
-         (when
-             (and
-              (boundp 'which-func-mode)
-              which-func-mode)
-           (powerline-raw which-func-format nil 'l))
-         (powerline-raw " ")
-         (funcall separator-left mode-line face1)
-         (when
-             (boundp 'erc-modified-channels-object)
-           (powerline-raw erc-modified-channels-object face1 'l))
-         (powerline-major-mode face1 'l)
-         (powerline-process face1)
-         (powerline-minor-modes face1 'l)
-         (powerline-narrow face1 'l)
-         (powerline-raw " " face1)
-         (funcall separator-left face1 face2)
-         (powerline-vc face2 'r)
-         (when
-             (bound-and-true-p nyan-mode)
-           (powerline-raw
+   (quote
+    ("%e"
+     (:eval
+      (let*
+          ((active
+            (powerline-selected-window-active))
+           (mode-line
+            (if active
+                (quote mode-line)
+              (quote mode-line-inactive)))
+           (face1
+            (if active
+                (quote powerline-active1)
+              (quote powerline-inactive1)))
+           (face2
+            (if active
+                (quote powerline-active2)
+              (quote powerline-inactive2)))
+           (separator-left
+            (intern
+             (format "powerline-%s-%s"
+                     (powerline-current-separator)
+                     (car powerline-default-separator-dir))))
+           (separator-right
+            (intern
+             (format "powerline-%s-%s"
+                     (powerline-current-separator)
+                     (cdr powerline-default-separator-dir))))
+           (lhs
             (list
-             (nyan-create))
-            face2 'l))))
-       (rhs
-        (list
-         (powerline-raw global-mode-string face2 'r)
-         ;;(funcall separator-right face2 face1)
-         ;; (unless window-system
-         ;;   (powerline-raw
-         ;;    (char-to-string 57505)
-         ;;    face1 'l))
-         (funcall separator-right face2 face1)
-         ;;(powerline-raw " ")
-         (powerline-raw " %4p" face1 'r)
-         (when powerline-display-hud
-           (powerline-hud face2 face1)))))
-    (concat
-     (powerline-render lhs)
-     (powerline-fill face2
-                     (powerline-width rhs))
-     (powerline-render rhs))))))))
+             (powerline-raw "%l:%c " face1
+                            (quote l))
+             (funcall separator-left face1 mode-line)
+             (powerline-raw "%*" nil
+                            (quote l))
+             (when powerline-display-buffer-size
+               (powerline-buffer-size nil
+                                      (quote l)))
+             (when powerline-display-mule-info
+               (powerline-raw mode-line-mule-info nil
+                              (quote l)))
+             (powerline-buffer-id nil
+                                  (quote l))
+             (when
+                 (and
+                  (boundp
+                   (quote which-func-mode))
+                  which-func-mode)
+               (powerline-raw which-func-format nil
+                              (quote l)))
+             (powerline-raw " ")
+             (funcall separator-left mode-line face1)
+             (when
+                 (boundp
+                  (quote erc-modified-channels-object))
+               (powerline-raw erc-modified-channels-object face1
+                              (quote l)))
+             (powerline-major-mode face1
+                                   (quote l))
+             (powerline-process face1)
+             (powerline-minor-modes face1
+                                    (quote l))
+             (powerline-narrow face1
+                               (quote l))
+             (powerline-raw " " face1)
+             (funcall separator-left face1 face2)
+             (powerline-vc face2
+                           (quote r))
+             (when
+                 (bound-and-true-p nyan-mode)
+               (powerline-raw
+                (list
+                 (nyan-create))
+                face2
+                (quote l)))))
+           (rhs
+            (list
+             (powerline-raw global-mode-string face2
+                            (quote r))
+             (funcall separator-right face2 face1)
+             (powerline-raw " %4p" face1
+                            (quote r))
+             (when powerline-display-hud
+               (powerline-hud face2 face1)))))
+        (concat
+         (powerline-render lhs)
+         (powerline-fill face2
+                         (powerline-width rhs))
+         (powerline-render rhs)))))))
+  '(window-number-mode t))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(flycheck-color-mode-line-error-face ((t (:inherit flycheck-fringe-error :background "color-197" :foreground "black" :weight normal))))
+ '(compilation-mode-line-fail ((t (:inherit compilation-error :foreground "Red1" :weight bold))))
+ '(flycheck-color-mode-line-error-face ((t (:inherit flycheck-fringe-error :background "color-197" :foreground "black"))))
  '(flycheck-color-mode-line-info-face ((t (:inherit flycheck-fringe-info :foreground "green" :weight normal))))
  '(flycheck-color-mode-line-warning-face ((t (:inherit flycheck-fringe-warning :foreground "yellow" :weight normal))))
- '(flycheck-error ((t (:underline "color-197")))))
+ '(flycheck-error ((t (:underline "color-197"))))
+ '(mode-line ((t (:background "color-236" :foreground "color-242"))))
+ '(mode-line-buffer-id ((t (:foreground "white"))))
+ '(mode-line-inactive ((t (:background "color-235" :foreground "cyan" :weight light))))
+ '(powerline-active1 ((t (:background "color-235" :foreground "color-238"))))
+ '(powerline-active2 ((t (:background "grey40" :foreground "black"))))
+ '(powerline-inactive1 ((t (:background "color-235" :foreground "cyan"))))
+ '(powerline-inactive2 ((t (:background "grey20" :foreground "color-30"))))
+ '(window-number-face ((t (:background "color-52" :foreground "white"))) t))

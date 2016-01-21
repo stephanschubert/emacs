@@ -261,7 +261,6 @@
      (message-header-xheader-face ((t (:foreground "MediumAquamarine"))))
      (message-mml-face ((t (:foreground "ForestGreen"))))
      (message-separator-face ((t (:foreground "chocolate"))))
-     (mode-line ((t (:background "grey75" :foreground "black" :box (:line-width -1 :style released-button)))))
      (mouse ((t (:background "Grey"))))
      (region ((t (:background "DarkSlateBlue"))))
      (scroll-bar ((t (:background "grey75"))))
