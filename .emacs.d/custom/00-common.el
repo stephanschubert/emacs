@@ -88,3 +88,6 @@
 
 ;; Activate region-state mode to show selected number of lines/characters.
 (region-state-mode 1)
+
+;; Show inline colors
+(rainbow-mode t)
