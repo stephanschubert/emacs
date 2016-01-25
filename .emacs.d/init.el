@@ -23,6 +23,7 @@
 (load "01-dockerfile")
 (load "01-expand-region")
 (load "01-flycheck")
+(load "01-guide-key")
 (load "01-haml")
 (load "01-helm")
 (load "01-ivy")
