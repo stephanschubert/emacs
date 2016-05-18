@@ -201,7 +201,7 @@ Repeated invocations toggle between the two most recently open buffers."
 
 (defun jzn/duplicate-line (&optional commentfirst)
   "Duplicates the line at point; if COMMENTFIRST is non-nil, comment the original."
-  (interactive)
+  (interactive "P")
   (beginning-of-line)
   (let ((beg (point)))
     (end-of-line)

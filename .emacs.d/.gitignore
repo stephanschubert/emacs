@@ -1,4 +1,5 @@
 .cask/
+elpa/
 
 projectile-bookmarks.eld
 projectile.cache

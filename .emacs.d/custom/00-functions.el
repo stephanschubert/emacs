@@ -43,6 +43,34 @@
 
 (global-set-key (kbd "M-o") 'jzn/newline-before-this-line)
 
+(defun smart-open-line ()
+  "Insert an empty line after the current line.
+Position the cursor at its beginning, according to the current mode."
+  (interactive)
+  (move-end-of-line nil)
+  (newline-and-indent))
+
+(defun smart-open-line-above ()
+  "Insert an empty line above the current line.
+Position the cursor at it's beginning, according to the current mode."
+  (interactive)
+  (move-beginning-of-line nil)
+  (newline-and-indent)
+  (forward-line -1)
+  (indent-according-to-mode))
+
+(defun prelude-smart-open-line-above ()
+  "Insert an empty line above the current line.
+Position the cursor at it's beginning, according to the current mode."
+  (interactive)
+  (move-beginning-of-line nil)
+  (newline-and-indent)
+  (forward-line -1)
+  (funcall indent-line-function))
+
+;; (global-set-key (kbd "C-m") 'smart-open-line)
+;; (global-set-key (kbd "C-o") 'prelude-smart-open-line-above)
+
 ;; See: http://emacs.stackexchange.com/questions/10359/delete-portion-of-isearch-string-that-does-not-match-or-last-char-if-complete-m
 ;; Alt: Use isearch+.el for more extensions.
 (defun jzn/isearch-delete ()

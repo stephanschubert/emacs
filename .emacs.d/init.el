@@ -1,8 +1,183 @@
-;; Added by Package.el.  This must come before configurations of
-;; installed packages.  Don't delete this line.  If you don't want it,
-;; just comment it out by adding a semicolon to the start of the line.
-;; You may delete these explanatory comments.
+(require 'package)
 (package-initialize)
+(setq package-enable-at-startup nil)
+(add-to-list 'package-archives
+             '(("melpa" . "https://melpa.org/packages/")
+	       ("gnu" . "http://elpa.gnu.org/packages/")
+               ("marmalade" . "http://marmalade-repo.org/packages/")))
+(package-initialize)
+
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+
+(eval-when-compile
+  (setq use-package-verbose t)
+  (require 'use-package))
+
+(use-package bind-key :ensure t)
+(use-package diminish :ensure t)
+
+(use-package quickrun
+  :ensure t
+  :config
+  (setq quickrun-focus-p nil))
+
+(use-package clojure-mode
+  :init
+  (progn
+    (add-hook 'clojure-mode-hook #'prettify-symbols-mode))
+
+  :mode (("\.clj$"      . clojure-mode)
+         ("\.cljs$"     . clojure-mode)
+         ("\.cljx$"     . clojure-mode)
+         ("\.edn$"      . clojure-mode)
+         ("\.boot$"     . clojure-mode)
+         ("\.cljs\.hl$" . clojure-mode))
+
+  :config
+  (setq clojure--prettify-symbols-alist
+        '(("fn" . ?λ)
+          ("not=" . ?≠)
+          ("identical?" . ?≡)))
+
+  (setq prettify-symbols-unprettify-at-point 'right-edge)
+  )
+
+;; (setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
+;;     (setq exec-path (append exec-path '("/usr/local/bin")))
+;; (add-to-list 'load-path "/usr/local/bin")
+;; (autoload 'tern-mode "tern" nil t)
+
+(use-package js2-mode
+  :mode (("\\.js\\'" . js2-mode)
+         ("\\.jsx\\'" . js2-jsx-mode))
+  :init
+  (setq js2-highlight-level 3
+        js2-strict-trailing-comma-warning nil
+        js2-strict-missing-semi-warning nil
+        js2-missing-semi-one-line-override t
+        js2-allow-rhino-new-expr-initializer nil
+        js2-include-node-externs t
+        js2-warn-about-unused-function-arguments t
+        js2-basic-offset 2)
+  (add-hook 'js2-mode-hook (lambda ()
+                             (subword-mode 1)
+                             (diminish 'subword-mode)))
+  (add-hook 'js2-mode-hook 'js2-imenu-extras-mode)
+  ;; (rename-modeline "js2-mode" js2-mode "JS2")
+  :config
+  (use-package tern
+    :diminish tern-mode
+    :init
+    (add-hook 'js2-mode-hook 'tern-mode))
+  (use-package js-doc)
+  (use-package js2-refactor
+    :diminish js2-refactor-mode
+    :init
+    (add-hook 'js2-mode-hook #'js2-refactor-mode)
+    :config
+    (js2r-add-keybindings-with-prefix "C-c r")))
+
+;; (use-package js2-mode
+;;   :mode (("\\.js\\'" . js2-mode)
+;;          ("\\.jsx\\'" . js2-jsx-mode))
+;;   ;; :diminish js2-minor-mode
+;;   :commands (js2-mode js-mode js2-minor-mode)
+;;   :init (progn
+;;           (use-package tern
+;;             ;; :diminish " T"
+;;             :commands (tern-mode)
+;;             :init (progn
+;;                     (add-hook 'js-mode-hook 'tern-mode)))
+;;           (add-hook 'js-mode-hook 'js2-minor-mode)
+;;           (add-to-list 'interpreter-mode-alist '("node" . js-mode))))
+;; (rename-modeline "js2-mode" js2-mode "JS2")
+
+;; (use-package tern
+;;   :commands (tern-mode)
+;;   :init
+;;   (progn
+;;     (add-hook 'js-mode-hook 'tern-mode))
+;;   )
+
+;;   :config
+;;   (progn
+;;     (define-clojure-indent
+;;       (defroutes 'defun)
+;;       (GET 2)
+;;       (POST 2)
+;;       (PUT 2)
+;;       (DELETE 2)
+;;       (HEAD 2)
+;;       (ANY 2)
+;;       (context 2)
+;;       (let-routes 1))
+
+;;     (define-clojure-indent
+;;       (form-to 1))
+
+;;     (define-clojure-indent
+;;       (match 1)
+;;       (are 2)
+;;       (checking 2)
+;;       (async 1))
+
+;;     (define-clojure-indent
+;;       (select 1)
+;;       (insert 1)
+;;       (update 1)
+;;       (delete 1))
+
+;;     (define-clojure-indent
+;;       (run* 1)
+;;       (fresh 1))
+
+;;     (define-clojure-indent
+;;       (extend-freeze 2)
+;;       (extend-thaw 1))
+
+;;     (define-clojure-indent
+;;       (go-loop 1))
+
+;;     (define-clojure-indent
+;;       (this-as 1)
+;;       (specify 1)
+;;       (specify! 1))
+
+
+;;     (defun toggle-nrepl-buffer ()
+;;       "Toggle the nREPL REPL on and off"
+;;       (interactive)
+;;       (if (string-match "cider-repl" (buffer-name (current-buffer)))
+;;           (delete-window)
+;;         (cider-switch-to-repl-buffer)))
+
+;;     (defun cider-save-and-refresh ()
+;;       (interactive)
+;;       (save-buffer)
+;;       (call-interactively 'cider-refresh))
+
+;;     ;; (evil-leader/set-key "eb" 'cider-eval-buffer)
+;;     ;; (evil-leader/set-key "ee" 'cider-eval-last-sexp)
+;;     ;; (evil-leader/set-key "er" 'cider-eval-region)
+;;     ;; (evil-leader/set-key "ef" 'cider-eval-defun-at-point)
+
+;;     ;; (evil-leader/set-key "cd" 'cider-doc)
+;;     ;; (evil-leader/set-key "cc" 'cider-connect)
+;;     ;; (evil-leader/set-key "ct" 'cider-test-run-tests)
+;;     ;; (evil-leader/set-key "cr" 'toggle-nrepl-buffer)
+;;     ;; (evil-leader/set-key "cf" 'cider-save-and-refresh)
+
+;;     (global-set-key (kbd "s-r") 'cider-save-and-refresh)))
+
+;; (require 'diminish)
+;; (require 'bind-key)
+
+;; (use-package smooth-scroll
+;;   :config
+;;   (smooth-scroll-mode 1)
+;;   (setq smooth-scroll/vscroll-step-size 1))
 
 (require 'cask "~/.cask/cask.el")
 (cask-initialize)
@@ -50,20 +225,20 @@
 (load "bindings")
 (load "custom")
 (load "osx")
-;; (load "global")
+;; ;; (load "global")
 (load "shell")
-;(load "ruby")
-;(load "rails")
-(load "yaml")
-(load "sass")
-(load "01-scss")
-;; (load "icicles") Broken?
-(load "mustache")
-(load "scss")
-(load "textile")
-(load "yasnippet")
-;;(load "nxml")
-;;(load "restclient")
+;; (load "ruby")
+;; (load "rails")
+;; (load "yaml")
+;; (load "sass")
+;;(load "01-scss")
+;; ;; (load "icicles") Broken?
+;; (load "mustache")
+;; (load "scss")
+;; (load "textile")
+;; (load "yasnippet")
+;; ;;(load "nxml")
+;; ;;(load "restclient")
 
 ;; Got some issues so will be loaded last so it wont interfere with other stuff.
 (load "theme")
@@ -168,7 +343,10 @@
          (powerline-fill face2
                          (powerline-width rhs))
          (powerline-render rhs)))))))
-  '(window-number-mode t))
+ '(package-selected-packages
+   (quote
+    (quickrun js2-refactor js-doc tern clojure-mode auto-compile use-package)))
+ '(window-number-mode t))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
