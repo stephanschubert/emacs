@@ -27,6 +27,25 @@
   :config
   (setq quickrun-focus-p nil))
 
+(use-package web-mode
+  :ensure t
+  :mode (("\.jsx$" . web-mode)
+         ("\.html$" . web-mode)
+         ("\.html\.erb$" . web-mode)
+         ("\.s?css$" . web-mode)
+         ("\.mustache$" . web-mode))
+  :config
+  (setq web-mode-content-types-alist
+        '(("jsx" . "\.jsx?$")))
+  (setq web-mode-enable-css-colorization t)
+  (setq web-mode-markup-indent-offset 2)
+  (setq web-mode-css-indent-offset 2)
+  (setq web-mode-code-indent-offset 2)
+  (setq web-mode-style-padding 2)
+  (setq web-mode-script-padding 2)
+  (setq web-mode-enable-auto-pairing t)
+)
+
 (use-package clojure-mode
   :init
   (progn
