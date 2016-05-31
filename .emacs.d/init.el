@@ -7,6 +7,10 @@
                ("marmalade" . "http://marmalade-repo.org/packages/")))
 (package-initialize)
 
+(require 'cask "~/.cask/cask.el")
+(cask-initialize)
+(require 'pallet)
+
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
@@ -178,10 +182,6 @@
 ;;   :config
 ;;   (smooth-scroll-mode 1)
 ;;   (setq smooth-scroll/vscroll-step-size 1))
-
-(require 'cask "~/.cask/cask.el")
-(cask-initialize)
-(require 'pallet)
 
 (add-to-list 'load-path "~/.emacs.d/bundle/smartparens")
 (add-to-list 'load-path "~/.emacs.d/custom")
