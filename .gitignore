@@ -4,3 +4,5 @@
 
 ac-comphist.dat # Database from auto-complete mode for Emacs.
 recentf
+*.log
+.last-package-update-day
