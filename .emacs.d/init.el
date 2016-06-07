@@ -30,15 +30,19 @@
   :ensure t
   :diminish ivy-mode
   :init
-  (setq ivy-use-virtual-buffers t)
   (ivy-mode 1)
   :bind
   ("C-s" . swiper) ;; Was forward i-search
   :config
-  (setq ivy-wrap t) ;; Wrap while traversing candidates in mini-buf
-  (setq ivy-re-builders-alist '((t . ivy--regex-fuzzy)))
+  (setq ivy-wrap t)                   ;; Wrap while traversing candidates in mini-buf
+  (setq ivy-use-virtual-buffers t)    ;; Show recently killed buffers when calling `ivy-switch-buffer'
+  (setq ivy-virtual-abbreviate 'full) ;; Show the full virtual file paths
+  (setq ivy-count-format "%d/%d ")    ;; Show current/all match count
+  (setq ivy-extra-directories nil)    ;; Do not show "./" and "../" in the `counsel-find-file' completion list
+
   ;; If you're going fuzzy all the way, you can do without the initial ^,
   ;; and simply let flx (hopefully) sort the matches in a nice way:
+  (setq ivy-re-builders-alist '((t . ivy--regex-fuzzy)))
   (setq ivy-initial-inputs-alist nil))
 
 (use-package quickrun
