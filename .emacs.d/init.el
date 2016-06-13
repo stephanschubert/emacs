@@ -111,8 +111,8 @@
 ;; (autoload 'tern-mode "tern" nil t)
 
 (use-package js2-mode
-  :mode (("\\.js\\'" . js2-mode)
-         ("\\.jsx\\'" . js2-jsx-mode))
+  :mode (("\.js$" . js2-mode)
+         ("\.jsx$" . js2-jsx-mode))
   :init
   (setq js2-highlight-level 3
         js2-strict-trailing-comma-warning nil
