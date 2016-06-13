@@ -89,9 +89,21 @@
         '(("fn" . ?λ)
           ("not=" . ?≠)
           ("identical?" . ?≡)))
+  (setq prettify-symbols-unprettify-at-point 'right-edge))
 
-  (setq prettify-symbols-unprettify-at-point 'right-edge)
-  )
+(use-package lisp-mode
+  :init
+  (progn
+    (add-hook 'lisp-mode-hook #'prettify-symbols-mode)
+    (add-hook 'emacs-lisp-mode-hook #'prettify-symbols-mode))
+  :config
+  (setq lisp--prettify-symbols-alist
+        '(("lambda" . ?λ)
+          ("compose" . ?∘)
+          ("curry" . ?»)
+          ("rcurry" . ?«)
+          ("eq" . ?=)))
+  (setq prettify-symbols-unprettify-at-point 'right-edge))
 
 ;; (setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
 ;;     (setq exec-path (append exec-path '("/usr/local/bin")))
