@@ -401,7 +401,8 @@
          (powerline-render rhs)))))))
  '(package-selected-packages
    (quote
-    (quickrun js2-refactor js-doc tern clojure-mode auto-compile use-package)))
+    (auto-package-update web-mode quickrun js2-refactor js-doc tern clojure-mode auto-compile use-package)))
+ '(tab-always-indent (quote complete))
  '(window-number-mode t))
 
 (custom-set-faces
