@@ -50,6 +50,9 @@
   :config
   (setq quickrun-focus-p nil))
 
+(use-package nyan-mode
+  :init (nyan-mode 1))
+
 (use-package web-mode
   :ensure t
   :mode (("\.jsx$" . web-mode)

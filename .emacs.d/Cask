@@ -27,6 +27,7 @@
 (depends-on "key-chord")
 (depends-on "key-combo")
 (depends-on "magit")
+(depends-on "nyan-mode")
 (depends-on "pallet")
 (depends-on "powerline")
 (depends-on "projectile")
