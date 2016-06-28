@@ -31,8 +31,6 @@
   :diminish ivy-mode
   :init
   (ivy-mode 1)
-  :bind
-  ("C-s" . swiper) ;; Was forward i-search
   :config
   (setq ivy-wrap t)                   ;; Wrap while traversing candidates in mini-buf
   (setq ivy-use-virtual-buffers t)    ;; Show recently killed buffers when calling `ivy-switch-buffer'
@@ -44,6 +42,19 @@
   ;; and simply let flx (hopefully) sort the matches in a nice way:
   (setq ivy-re-builders-alist '((t . ivy--regex-fuzzy)))
   (setq ivy-initial-inputs-alist nil))
+
+(use-package swiper
+  :ensure t
+  :bind
+  ("C-s" . swiper)                      ;; Was forward i-search
+  ("C-c C-r" . ivy-resume)
+  ("C-x C-m" . counsel-M-x)             ;; Map M-x
+  ("C-x C-f" . counsel-find-file)
+  ("C-c a" . counsel-ag)
+  ("C-h f" . counsel-describe-function) ;; Replace original
+  ("C-h v" . counsel-describe-variable) ;; Replace original
+  :config
+  (ivy-mode 1))
 
 (use-package quickrun
   :ensure t
@@ -250,7 +261,6 @@
 (load "01-ag")
 (load "01-company-mode")
 (load "01-coffee-mode")
-(load "01-counsel")
 (load "01-dash")
 (load "01-dockerfile")
 (load "01-expand-region")
