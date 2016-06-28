@@ -37,6 +37,7 @@
   (setq ivy-virtual-abbreviate 'full) ;; Show the full virtual file paths
   (setq ivy-count-format "%d/%d ")    ;; Show current/all match count
   (setq ivy-extra-directories nil)    ;; Do not show "./" and "../" in the `counsel-find-file' completion list
+  (setq ivy-display-style 'fancy)     ;; More highlighting of matches
 
   ;; If you're going fuzzy all the way, you can do without the initial ^,
   ;; and simply let flx (hopefully) sort the matches in a nice way:
