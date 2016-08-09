@@ -26,6 +26,16 @@
 (use-package bind-key :ensure t)
 (use-package diminish :ensure t)
 
+(use-package flx-ido
+  :ensure t
+  :init
+  (progn
+    ;; https://github.com/lewang/flx#gc-optimization
+    (setq gc-cons-threshold (* 20 (expt 2 20)) ;; megabytes
+          ido-use-faces nil))
+  :config
+  (flx-ido-mode 1))
+
 (use-package ivy
   :ensure t
   :diminish ivy-mode
@@ -40,7 +50,7 @@
   (setq ivy-display-style 'fancy)     ;; More highlighting of matches
 
   ;; If you're going fuzzy all the way, you can do without the initial ^,
-  ;; and simply let flx (hopefully) sort the matches in a nice way:
+  ;; and simply let flx (did you install it?) sort the matches in a nice way:
   (setq ivy-re-builders-alist '((t . ivy--regex-fuzzy)))
   (setq ivy-initial-inputs-alist nil))
 
