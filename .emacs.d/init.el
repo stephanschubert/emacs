@@ -43,7 +43,7 @@
   (ivy-mode 1)
   :config
   (setq ivy-wrap t)                   ;; Wrap while traversing candidates in mini-buf
-  (setq ivy-use-virtual-buffers t)    ;; Show recently killed buffers when calling `ivy-switch-buffer'
+  (setq ivy-use-virtual-buffers t)    ;; Include recentf and bookmarks when calling `ivy-switch-buffer'
   (setq ivy-virtual-abbreviate 'full) ;; Show the full virtual file paths
   (setq ivy-count-format "%d/%d ")    ;; Show current/all match count
   (setq ivy-extra-directories nil)    ;; Do not show "./" and "../" in the `counsel-find-file' completion list
