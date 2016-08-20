@@ -51,7 +51,9 @@
 
   ;; If you're going fuzzy all the way, you can do without the initial ^,
   ;; and simply let flx (did you install it?) sort the matches in a nice way:
-  (setq ivy-re-builders-alist '((t . ivy--regex-fuzzy)))
+  (setq ivy-re-builders-alist
+        '((swiper . ivy--regex-plus)  ;; Restore old behaviour for swiper
+          (t . ivy--regex-fuzzy)))
   (setq ivy-initial-inputs-alist nil))
 
 (use-package swiper
